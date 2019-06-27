@@ -14,7 +14,7 @@ import com.weavey.loading.lib.LoadingLayout;
 
 /**
  * 作者：flyjiang
- * 时间: 2015/7/13 19:42
+ * 时间: 2019/7/13 19:42
  */
 public abstract class BaseDemoActivity extends BaseActivity{
     /**
