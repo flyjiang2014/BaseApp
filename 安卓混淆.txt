@@ -1,0 +1,216 @@
+第一次写别介意
+我们开发中，经常回遇到apk 大小的问题
+首先我们想到的是减少图片，或者将png 转换成 jpeg, 还有一种方法也是我常用的 利用工具将png无损压缩，而达到png 图片的大小，再有就是利用svg 来减少图片 ，几个方法都可以试试。
+
+第二种 就是利用 混淆 来缓解apk 的大小，那么开启混淆其实挺简单。
+第一步当前apps 下   build.gradle       minifyEnabled true  true 为开启混淆 注意的是
+release 和 debug 是否都要开启混淆 ，有的时候debug 开启混淆可能导致编译过慢 ，但是开始其实是件好事，
+为什么这么说呢。因为当你打完混淆之后 打包成 release   可能会出现问题，所以说debug开启混淆是件好事。
+
+第二步  找到当前apps 下proguard-rules.pro  文件打开配置混淆指令
+
+在编写这里面时候先逐条介绍下基本指令区指令的含义
+
+-optimizationpasses 5
+代码混淆的压缩比例，值在0-7之间
+
+-dontusemixedcaseclassnames
+混淆后类名都为小写
+
+-dontskipnonpubliclibraryclasses
+指定不去忽略非公共的库的类
+
+-dontskipnonpubliclibraryclassmembers
+指定不去忽略非公共的库的类的成员
+
+-dontpreverify
+不做预校验的操作
+
+-verbose
+-printmapping proguardMapping.txt
+生成原类名和混淆后的类名的映射文件
+
+-optimizations !code/simplification/cast,!field/*,!class/merging/*
+指定混淆是采用的算法
+
+-keepattributes *Annotation*,InnerClasses
+不混淆Annotation
+
+-keepattributes Signature
+不混淆泛型
+
+-keepattributes SourceFile,LineNumberTable
+抛出异常时保留代码行号
+
+-keep class XXXX
+保留类名不变，也就是类名不混淆，而类中的成员名不保证。当然也可以是继承XXX类的所有类名不混淆，具体代码不贴了，重在理解。
+
+-keepclasseswithmembers class XXXX
+保留类名和成员名。当然也可以是类中特定方法，代码不贴了，理由同上
+
+上边是基命令介绍完了 开始编写混淆 复制的你复制就可以了
+
+
+#-------------------------------------------基本不用动区域--------------------------------------------
+#---------------------------------基本指令区----------------------------------
+-optimizationpasses 5
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-dontskipnonpubliclibraryclassmembers
+-dontpreverify
+-verbose
+-printmapping proguardMapping.txt
+-optimizations !code/simplification/cast,!field/*,!class/merging/*
+-keepattributes *Annotation*,InnerClasses
+-keepattributes Signature
+-keepattributes SourceFile,LineNumberTable
+#----------------------------------------------------------------------------
+
+#---------------------------------默认保留区---------------------------------
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.backup.BackupAgentHelper
+-keep public class * extends android.preference.Preference
+-keep public class * extends android.view.View
+-keep public class com.android.vending.licensing.ILicensingService
+-keep class android.support.** {*;}
+
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+-keepclassmembers class * extends android.app.Activity{
+    public void *(android.view.View);
+}
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+-keep public class * extends android.view.View{
+    *** get*();
+    void set*(***);
+    public <init>(android.content.Context);
+    public <init>(android.content.Context, android.util.AttributeSet);
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet);
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+-keep class * implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator *;
+}
+-keepclassmembers class * implements java.io.Serializable {
+    static final long serialVersionUID;
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+-keep class **.R$* {
+ *;
+}
+-keepclassmembers class * {
+    void *(**On*Event);
+}
+#----------------------------------------------------------------------------
+
+
+#---------------------------------webview------------------------------------
+-keepclassmembers class fqcn.of.javascript.interface.for.Webview {
+   public *;
+}
+-keepclassmembers class * extends android.webkit.WebViewClient {
+    public void *(android.webkit.WebView, java.lang.String, android.graphics.Bitmap);
+    public boolean *(android.webkit.WebView, java.lang.String);
+}
+-keepclassmembers class * extends android.webkit.WebViewClient {
+    public void *(android.webkit.WebView, jav.lang.String);
+}
+#----------------------------------------------------------------------------
+
+
+基本配置到这就差不多了
+ 下面在就是一些第三方的混淆  例如rxjava，#butterknife，#fastjson，OkHttp3，Retrofit等，下面都是官方给的
+ 基本复制就可以 这里面你可能很多都用不到 ，我都给你放这了 不用的删除就行
+
+
+ # OkHttp3
+-dontwarn okhttp3.logging.**
+-keep class okhttp3.internal.**{*;}
+-dontwarn okio.**
+
+# Retrofit
+-dontwarn retrofit2.**
+-keep class retrofit2.** { *; }
+
+#fastjson
+-dontwarn com.alibaba.fastjson.**
+-keep class com.alibaba.fastjson.**{*; }
+
+# rxjava
+-dontwarn rx.**
+-keep class rx.** { *; }
+-dontwarn sun.misc.**
+-keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
+ long producerIndex;
+ long consumerIndex;
+}
+-keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
+ rx.internal.util.atomic.LinkedQueueNode producerNode;
+}
+-keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueConsumerNodeRef {
+ rx.internal.util.atomic.LinkedQueueNode consumerNode;
+}
+
+#butterknife
+-keep class butterknife.** { *; }
+-dontwarn butterknife.internal.**
+-keep class **$$ViewBinder { *; }
+
+-keepclasseswithmembernames class * {
+    @butterknife.* <fields>;
+}
+
+-keepclasseswithmembernames class * {
+    @butterknife.* <methods>;
+}
+
+#eventBus
+-keepattributes *Annotation*
+-keepclassmembers class ** {
+    @org.greenrobot.eventbus.Subscribe <methods>;
+}
+-keep enum org.greenrobot.eventbus.ThreadMode { *; }
+-keepclassmembers class * extends org.greenrobot.eventbus.util.ThrowableFailureEvent {
+    <init>(java.lang.Throwable);
+}
+
+#glide
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+
+
+写到这里 突然想起了一件事  例如 我之前 用Retrofit 进行网络请求 那么我混淆完发现一个问题 我的api 请求 都不能用了
+所以在这提一句。如果在你混淆时候没有报错  ，在你运行时报错  ，加上下面句 保留什么类不被混淆掉，
+
+#---------------------------------1.实体类---------------------------------
+
+-keep class com.demo.login.bean.** { *; }
+-keep class com.demo.main.bean.** { *; }
+
+#-------------------------------------------------------------------------
+
+
+
+其实还有一种缩小apk 的方法  那就是混淆资源文件 ，我之前用了一下微信的资源混淆，发现直接减小了1-2m
+感觉挺好用的  ，但是一定要配置好 ，美团混淆方案也不错 挺有效的保护了资源文件， 我把微信混淆地址发出来。有兴趣可以看看
+https://github.com/shwenzhang/AndResGuard  这是github 地址
+https://my.oschina.net/bugly/blog/536064  这是介绍微信混淆地址
+

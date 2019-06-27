@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+ <!--   <com.base.flyjiang.baseapp.Widget.SwitchToggleView
+        android:id="@+id/switch_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text=""
+        android:textOff=""
+        android:textOn=""/>
+-->
+    <!--   <ScrollView-->
+   <net.anumbrella.pullrefresh.Widget.PullRefreshScrollView
+        android:id="@+id/PullRefreshScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+       <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+           android:orientation="vertical">
+       <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:gravity="center"
+       android:text="dfhsda"/>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:text="dfhsda"/>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="50dp"
+               android:gravity="center"
+               android:text="dfhsda"/>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:padding="15dp"
+               android:gravity="center"
+               android:text="dfhsda"/>
+           <TextView
+               android:id="@+id/tv_ceshi"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:text="dfhsda"/>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:gravity="center"
+               android:background="@color/blue"
+               android:text="dfhsda"/>
+       </LinearLayout>
+   </net.anumbrella.pullrefresh.Widget.PullRefreshScrollView>
+</LinearLayout>

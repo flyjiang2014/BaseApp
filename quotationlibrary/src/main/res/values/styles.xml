@@ -1,0 +1,67 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="BaseAppTheme" parent="AppBaseTheme">
+        <item name="@android:windowAnimationStyle">@style/BaseActivitySwitchAnimation</item>
+        <item name="@android:windowNoTitle">true</item>
+        <item name="@android:scrollbarThumbVertical">@drawable/scrollbar_vertical_thumb</item>
+        <item name="@android:scrollbarTrackVertical">@drawable/scrollbar_vertical_track</item>
+        <item name="@android:windowTranslucentStatus">true</item>
+        <item name="@android:windowTranslucentNavigation">true</item>
+    </style>
+    <!-- 加载框loading -->
+    <style name="loading_dialog2" >
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- Activity过渡效果 -->
+    <style name="BaseActivitySwitchAnimation">
+        <!-- 右进 -->
+        <item name="android:activityOpenEnterAnimation">@anim/enter_right</item>
+        <!-- 左出 -->
+        <item name="android:activityOpenExitAnimation">@anim/exit_left</item>
+        <!-- 左进 -->
+        <item name="android:activityCloseEnterAnimation">@anim/enter_left</item>
+        <!-- 右出 -->
+        <item name="android:activityCloseExitAnimation">@anim/exit_right</item>
+    </style>
+
+    <style name="Dialog" parent="android:style/Theme.Dialog">
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="loading_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/shape_progress_dialog</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!--仿微信4.0导航-->
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsIndicatorColor" format="color" />
+        <attr name="pstsUnderlineColor" format="color" />
+        <attr name="pstsDividerColor" format="color" />
+        <attr name="pstsIndicatorHeight" format="dimension" />
+        <attr name="pstsUnderlineHeight" format="dimension" />
+        <attr name="pstsDividerPadding" format="dimension" />
+        <attr name="pstsTabPaddingLeftRight" format="dimension" />
+        <attr name="pstsScrollOffset" format="dimension" />
+        <attr name="pstsTabBackground" format="reference" />
+        <attr name="pstsShouldExpand" format="boolean" />
+        <attr name="pstsTextAllCaps" format="boolean" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:orientation="vertical"
+    tools:context=".ui.test.SecondDemoActivity">
+
+    <Button
+        android:id="@+id/btn_baidu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="百度"
+        android:layout_marginBottom="5dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="极光"
+        android:background="@drawable/btn_white_selector"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/tv_button"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:text="测试背景"
+        android:gravity="center"
+        android:padding="6dp"
+        android:background="@drawable/btn_white_selector"/>
+
+</LinearLayout>

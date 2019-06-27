@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+    <!-- <dbname>用于设定数据库的名字 -->
+    <dbname value="db_base_librariy"></dbname>
+
+    <!-- <version>用于设定数据库的版本号 -->
+    <version value="1"></version>
+
+    <!-- <list>用于设定所有的映射模型
+    example: <mapping class="com.cc.basefunction.bean.UserInfoBean"></mapping>
+
+     -->
+    <list>
+        <mapping class="com.base.flyjiang.baseapp.bean.SignalReturnData"></mapping>
+        <mapping class="com.base.flyjiang.baseapp.bean.ProductBean"></mapping>
+        <mapping class="com.base.flyjiang.baseapp.bean.ProductPicBean"></mapping>
+    </list>
+
+</litepal>

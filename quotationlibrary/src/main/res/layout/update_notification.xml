@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/image">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/progress"
+            android:maxLines="2"
+            android:textColor="#888888"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/title"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@id/title"
+            android:textColor="#888888"
+            android:textSize="16sp"
+            android:visibility="visible" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="3dip"
+            android:layout_alignBottom="@+id/percent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/percent"
+            android:layout_below="@id/title"
+            android:layout_marginRight="10dip"
+            android:layout_toLeftOf="@+id/percent"
+            android:paddingBottom="3dp"
+            android:paddingTop="3dp"
+            android:progressDrawable="@drawable/progressbar_bg" />
+
+        <TextView
+            android:id="@+id/percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/title"
+            android:layout_marginRight="5dip"
+            android:text=""
+            android:textColor="#888888"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+</RelativeLayout>

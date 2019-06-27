@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.weavey.loading.lib.LoadingLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:isFirstVisible="@bool/is_loading_visible">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="第0个fragment"/>
+
+    <net.anumbrella.pullrefresh.Widget.PullRefreshListView
+        android:id="@+id/pullRefreshListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    </LinearLayout>
+</com.weavey.loading.lib.LoadingLayout>

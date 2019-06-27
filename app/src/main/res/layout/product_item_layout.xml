@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/yellow"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--"
+                android:textColor="@color/text_black"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp">
+
+                <TextView
+                    android:id="@+id/tvNowPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="--"
+
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvOriginalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="--"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="销售日期："
+
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvSaleTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="-- "
+
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp">
+
+                <TextView
+                    android:id="@+id/tvSaleNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-- "
+
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E3E3E3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/tvState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="上线中"
+
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvOffline"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginRight="8dp"
+
+                android:gravity="center"
+                android:minHeight="20dp"
+                android:minWidth="60dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="下线"
+                android:textColor="#616161" />
+
+            <TextView
+                android:id="@+id/tvUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginRight="8dp"
+
+                android:gravity="center"
+                android:minHeight="20dp"
+                android:minWidth="60dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="编辑"
+                android:textColor="#616161"/>
+
+            <TextView
+                android:id="@+id/tvCancelOnline"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:minHeight="20dp"
+                android:minWidth="60dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="取消上线"
+                android:textColor="#616161"/>
+
+            <TextView
+                android:id="@+id/tvOnlineAgain"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:minHeight="20dp"
+                android:minWidth="60dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="再次上线"
+                android:textColor="#616161" />
+        </LinearLayout>
+    </LinearLayout>
+
+   <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+</LinearLayout>

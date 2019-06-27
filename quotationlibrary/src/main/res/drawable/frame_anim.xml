@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 序列帧动画 -->
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false" >
+
+    <item
+        android:drawable="@drawable/frame_jindutiao0"
+        android:duration="150"/>
+    <item
+        android:drawable="@drawable/frame_jindutiao1"
+        android:duration="150"/>
+
+</animation-list>

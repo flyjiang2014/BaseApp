@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">BaseApp</string>
+
+    <!--  Jpush used start-->
+    <string name="hello">Hello World, JPush!</string>
+    <string name="tag_hint">Tag为大小写字母，数字，下划线,中文， 多个用以逗号分隔</string>
+    <string name="alias_hint">Alias为大小写字母，数字，下划线</string>
+    <string name="style_hint">style为数字</string>
+    <string name="error_style_empty">style不能为空</string>
+    <string name="error_alias_empty">alias不能为空</string>
+    <string name="error_tag_empty">tag不能为空</string>
+    <string name="error_tag_gs_empty">格式不对</string>
+    <string name="error_network">网络连接异常,初始化失败 请检查网络！</string>
+    <string name="logining">程序在后台执行, 请查看日志！</string>
+    <string name="setting_su">设置成功</string>
+    <string name="title_activity_test_lv">TestLvActivity</string>
+    <!--  Jpush used end-->
+
+    <!-- WXPayEntryActivity -->
+    <string name="pay_result_tip">这个界面用于显示第三方app通过微信支付的结果</string>
+    <string name="pay_result_callback_msg" formatted="false">微信支付结果：%s</string>
+    <string name="app_tip">提示</string>
+
+    <!--behavior-->
+    <string name="simple_view_behavior">com.base.flyjiang.baseapp.ui.test.SimpleViewBehavior</string>
+
+    <!-- TestTwoCodeActivity -->
+    <string name="camera_failure">Connection failed</string>
+    <string name="camera_hint">Your camera may be occupied by other applications, please check and use.</string>
+</resources>

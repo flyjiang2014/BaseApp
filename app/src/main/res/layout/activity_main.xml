@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context="com.base.flyjiang.baseapp.ui.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RatingBar
+
+                style="@style/MyFiveStarRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:stepSize="0.5"
+                android:rating="0.8" />
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="0.1"
+                android:rating="0.2" />
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="登录接口测试" />
+
+            <Button
+                android:id="@+id/btn_baidu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="百度" />
+
+            <Button
+                android:id="@+id/btn_lv_shuaxin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="listView列表刷新" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="分享界面" />
+
+            <Button
+                android:id="@+id/btn_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="环信测试" />
+
+            <Button
+                android:id="@+id/btn_frg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="碎片" />
+
+            <Button
+                android:id="@+id/btn_frg_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="碎片02" />
+
+            <Button
+                android:id="@+id/btn_webView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="网页界面" />
+            </LinearLayout>
+
+            <com.carking.quotationlibrary.view.CustomGridview
+                android:id="@+id/gv_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:numColumns="4">
+            </com.carking.quotationlibrary.view.CustomGridview>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

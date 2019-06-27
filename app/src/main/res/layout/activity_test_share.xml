@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <com.base.flyjiang.baseapp.Widget.StickScrollView
+        android:id="@+id/ssl_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/btn_share"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/red"
+                    android:padding="10dp"
+                    android:text="分享" />
+
+                <TextView
+                    android:id="@+id/btn_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:padding="10dp"
+                    android:text="拍照" />
+
+                <Button
+                    android:id="@+id/btn_photo01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:padding="10dp"
+                    android:text="拍照" />
+
+                <TextView
+                    android:id="@+id/tv_stay01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="拍照" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/welcome_image"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:background="@color/blue"
+                    fresco:actualImageScaleType="fitCenter"
+                    fresco:placeholderImage="@mipmap/guide_img4"
+                    fresco:placeholderImageScaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/tv_stay02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="测试" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="900dp"
+                    android:background="@color/blue"></LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_float01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@color/white"
+                android:text="拍照" />
+
+            <TextView
+                android:id="@+id/tv_float02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@color/white"
+                android:text="测试" />
+        </FrameLayout>
+    </com.base.flyjiang.baseapp.Widget.StickScrollView>
+</LinearLayout>

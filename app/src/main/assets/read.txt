@@ -1,0 +1,22 @@
+1.在build.gradle文件的dependencies中引用  compile 'org.litepal.android:core:1.2.1'(PS：对应github上面说明地址)
+2.在application中继承LitePalApplication
+3.新建Bean类型，并继承DataSupport，可以在Bean里面写一个id选项方便用于单相更新数据
+4.在项目的assets文件夹下的litepal.xml中配置需要操作数据库的Bean类
+5.主要操作方法:
+    a)保存:http://blog.csdn.net/guolin_blog/article/details/39345833
+            DataSupport.save()，可以根据保存的结果判定是否保存成功；
+            DataSupport.saveThrows()，可以执行保存失败抛出异常；
+            DataSupport.saveAll(List),可保存一个列表
+    b)修改:http://blog.csdn.net/guolin_blog/article/details/40083685
+            person.update(id),person设置新数据后,用person里面写好的id即可实现更新
+            person.updateAll(),可全局修改
+    c)删除:http://blog.csdn.net/guolin_blog/article/details/40083685
+            if (person.isSaved()) {person.delete();},删除单个数据
+            DataSupport.deleteAll(Person.class);，删除全部数据
+    d)查找:http://blog.csdn.net/guolin_blog/article/details/40153833
+            DataSupport.find(Person.class, id);//根据id查询单个数据
+            DataSupport.findFirst(Person.class);//查询第一个数据
+            DataSupport.findLast(Person.class);//查询最后一个数据
+            DataSupport.findAll(Person.class, id1, id3, id5, id7);//查询多个数据
+            DataSupport.findAll(Person.class)//查询全部数据
+6.本文仅叙述常用的方法，更多方法请访问对应网址查看

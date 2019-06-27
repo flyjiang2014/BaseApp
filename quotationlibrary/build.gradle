@@ -1,0 +1,53 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    sourceSets {
+        main {
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:support-v4:24.2.1'
+    compile files('libs/fastjson-1.2.6.jar')
+    /** 引用数据库     */
+    //https://github.com/LitePalFramework/LitePal
+   // compile 'org.litepal.android:core:1.4.0'
+    compile 'org.litepal.android:core:1.4.1'
+    /** 日志打印库     */
+    compile 'in.srain.cube:clog:1.0.2'
+    /** 引用EventBus     */
+    //https://github.com/greenrobot/EventBus
+    compile 'de.greenrobot:eventbus:2.4.0'
+    /** 状态栏操作库     */
+    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    /** xutils */
+    compile 'org.xutils:xutils:3.3.36'
+    /** Facebook图片下载    */
+    //https://github.com/facebook/fresco
+    //http://fresco-cn.org/docs/index.html使用说明
+    compile 'com.facebook.fresco:fresco:0.9.0+'
+    /**水波纹效果*/
+    //https://github.com/balysv/material-ripple
+    compile 'com.balysv:material-ripple:1.0.2'
+}
