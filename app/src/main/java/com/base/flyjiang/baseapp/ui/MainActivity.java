@@ -27,7 +27,9 @@ import com.base.flyjiang.baseapp.runtimepermissions.PermissionsResultAction;
 import com.base.flyjiang.baseapp.ui.test.ALPayActivity;
 import com.base.flyjiang.baseapp.ui.test.AgentWebActivity;
 import com.base.flyjiang.baseapp.ui.test.BottomNavigationBarActivity;
+import com.base.flyjiang.baseapp.ui.test.BottomSheetActivity;
 import com.base.flyjiang.baseapp.ui.test.CoordinatorLayout02Activity;
+import com.base.flyjiang.baseapp.ui.test.CoordinatorLayout03Activity;
 import com.base.flyjiang.baseapp.ui.test.CoordinatorLayoutActivity;
 import com.base.flyjiang.baseapp.ui.test.FragmentIndexActivity;
 import com.base.flyjiang.baseapp.ui.test.LoginActivity;
@@ -174,9 +176,10 @@ public class MainActivity extends BaseDemoActivity implements View.OnClickListen
         itemArrayAdapter.add("PagerBottomTabStrip");
         itemArrayAdapter.add("popup");
         itemArrayAdapter.add("二维码");
-        itemArrayAdapter.add("二维码");
         itemArrayAdapter.add("约束布局");
         itemArrayAdapter.add("约束布局02");
+        itemArrayAdapter.add("约束布局03");
+        itemArrayAdapter.add("BottomSheet");
 
         gv_item.setAdapter(itemArrayAdapter);
         gv_item.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -218,13 +221,16 @@ public class MainActivity extends BaseDemoActivity implements View.OnClickListen
                         startActivity(new Intent(mContext, TestTwoCodeActivity.class));
                         break;
                     case 11:
-                        startActivity(new Intent(mContext, TestTwoCodeActivity.class));
-                        break;
-                    case 12:
                         startActivity(new Intent(mContext, CoordinatorLayoutActivity.class));
                         break;
-                    case 13:
+                    case 12:
                         startActivity(new Intent(mContext, CoordinatorLayout02Activity.class));
+                        break;
+                    case 13:
+                        startActivity(new Intent(mContext, CoordinatorLayout03Activity.class));
+                        break;
+                    case 14:
+                        startActivity(new Intent(mContext, BottomSheetActivity.class));
                         break;
                 }
             }

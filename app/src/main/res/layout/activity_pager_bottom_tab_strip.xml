@@ -12,7 +12,7 @@
         android:layout_weight="1"
         android:background="@android:color/white"
         />
-    <me.majiajie.pagerbottomtabstrip.PageBottomTabLayout
+    <me.majiajie.pagerbottomtabstrip.PageNavigationView
         android:id="@+id/tab"
         android:elevation="8dp"
         android:layout_width="match_parent"

@@ -12,7 +12,7 @@ import com.base.flyjiang.baseapp.ui.fragment.TestFragment03;
 import com.carking.quotationlibrary.base.BaseFragmentV4;
 
 import me.majiajie.pagerbottomtabstrip.NavigationController;
-import me.majiajie.pagerbottomtabstrip.PageBottomTabLayout;
+import me.majiajie.pagerbottomtabstrip.PageNavigationView;
 import me.majiajie.pagerbottomtabstrip.item.BaseTabItem;
 import me.majiajie.pagerbottomtabstrip.item.NormalItemView;
 import me.majiajie.pagerbottomtabstrip.listener.OnTabItemSelectedListener;
@@ -25,7 +25,7 @@ public class PagerBottomTabStripActivity extends BaseDemoActivity {
     private TestFragment03 mTestFragment03 ;
     private BaseFragmentV4 mBaseFragment;
     private FragmentTransaction mTransaction;
-    private PageBottomTabLayout tab;
+    private PageNavigationView tab;
 
     @Override
     public int setBaseContentView() {
@@ -34,7 +34,7 @@ public class PagerBottomTabStripActivity extends BaseDemoActivity {
 
     @Override
     public void init() {
-         tab = (PageBottomTabLayout) findViewById(R.id.tab);
+         tab = (PageNavigationView) findViewById(R.id.tab);
         //注意这里调用了custom()方法
         NavigationController navigationController = tab.custom()
                 .addItem(newItem(R.drawable.tabbar_home_n, R.drawable.tabbar_home_o, "Recents"))

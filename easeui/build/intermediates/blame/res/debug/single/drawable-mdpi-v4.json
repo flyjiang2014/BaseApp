@@ -1,5 +1,9 @@
 [
     {
+        "merged": "G:\\git\\BaseApp\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "G:\\git\\BaseApp\\easeui\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
         "merged": "G:\\BaseApp\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
         "source": "G:\\BaseApp\\easeui\\res\\drawable-mdpi\\ic_launcher.png"
     }

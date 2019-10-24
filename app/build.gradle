@@ -7,7 +7,7 @@ repositories {
 }
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.3"
+    buildToolsVersion '24.0.3'
 
     dexOptions {
         preDexLibraries = false
@@ -94,7 +94,6 @@ dependencies {
     /* https://github.com/qstumn/BadgeView*/
     //BadgeView
     //微信支付
-
     /* https://github.com/Ashok-Varma/BottomNavigation*/
     /* http://www.jianshu.com/p/134d7847a01e*/
     //
@@ -115,7 +114,7 @@ dependencies {
     compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
     compile 'com.lzy.net:okgo:3.0.1'
     compile 'com.ashokvarma.android:bottom-navigation-bar:1.4.3'
-    compile 'me.majiajie:pager-bottom-tab-strip:2.1.0'
+    compile 'me.majiajie:pager-bottom-tab-strip:2.3.0'
     compile 'com.github.razerdp:BasePopup:v1.8.0'
     compile 'com.yanzhenjie.zbar:camera:1.0.0'
     compile 'com.yanzhenjie.zbar:zbar:1.0.0'

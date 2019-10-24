@@ -21,6 +21,7 @@ public class CoordinatorLayout02Activity extends BaseDemoActivity {
 
     @Override
     public int setBaseContentView() {
+        setIsShowTitle(false);
         return R.layout.activity_coordinator_layout02;
     }
 

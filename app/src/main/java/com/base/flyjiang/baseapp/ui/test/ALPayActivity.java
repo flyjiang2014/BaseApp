@@ -115,11 +115,6 @@ public class ALPayActivity extends AppCompatActivity {
                 .params("type", "0")
                 .execute(
                         new DialogCallback<CommonReturnData<OrderPay>>(this) {
-//                            @Override
-//                            public void onSuccess(com.lzy.okgo.model.Response<CommonReturnData<OrderPay>> response) {
-//                                doPay(response.body().getData().payInfo);
-//                            }
-
                             @Override
                             public void onSuccess(CommonReturnData<OrderPay> returnData) {
 
@@ -151,35 +146,18 @@ public class ALPayActivity extends AppCompatActivity {
 
                             }
                         }
-
-
-/*                        new DialogCallback<CommonReturnData<OrderPay>>(this) {
-                            @Override
-                            public void onSuccess(CommonReturnData<OrderPay> orderPay, Call call, Response response) {
-                       //         if (isWeixinAvilible(PayAllActivity.this)) {  //判断有误安装微信
-                                doWechatPay(orderPay.getData().payInfo);
-//                                } else {
-//                                    showMessage("未安装微信，尝试其他支付");
-//                                }
-                            }
-                        }*/
-
-
                 );
     }
 
     @SuppressLint("HandlerLeak")
     private Handler mHandler = new Handler() {
-        @SuppressWarnings("unused")
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case SDK_PAY_FLAG: {
-                    @SuppressWarnings("unchecked")
                     PayResult payResult = new PayResult((Map<String, String>) msg.obj);
                     /**
                      对于支付结果，请商户依赖服务端的异步通知结果。同步通知结果，仅作为支付结束的通知。
                      */
-                    String resultInfo = payResult.getResult();// 同步返回需要验证的信息
                     String resultStatus = payResult.getResultStatus();
                     // 判断resultStatus 为9000则代表支付成功
                     if (TextUtils.equals(resultStatus, "9000")) {
